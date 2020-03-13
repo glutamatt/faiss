@@ -2,6 +2,8 @@
 set -x
 set -e
 
-cd c_api
-make
-cd ..
+if [ -v "${BUILD_C_API}" ]; then
+    cd c_api
+    make
+    cd ..
+fi

@@ -106,7 +106,7 @@ install:
   - ./configure --without-cuda
   - make
   - make -C python
-  - "! [[ -v BUILD_C_API ]] || ./.travis/install_c.sh"
+  - ./.travis/install_c.sh
 
 script:
   - make test
