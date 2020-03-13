@@ -2,7 +2,7 @@
 set -x
 set -e
 
-if [ -v "${BUILD_C_API}" ]; then
+if [ -n "${BUILD_C_API}" ]; then
     cd c_api
     make
     cd ..
