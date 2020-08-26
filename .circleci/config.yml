@@ -66,7 +66,7 @@ jobs:
           name: Build C api cmake
           command: |
             cd c_api
-            cmake
+            cmake -B build
       - run:
           name: Build C api make
           command: |
