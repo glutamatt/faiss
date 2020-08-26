@@ -74,7 +74,19 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
+          name: Install apt packages
           command: |
+            sudo apt-get update
+            sudo apt-get install -y swig python3-dev intel-mkl-64bit-2020.0.088
+            echo "source /opt/intel/bin/compilervars.sh intel64" >> $BASH_ENV
+      - run:
+          name: Install cmake
+          command: |
+            wget -O - https://github.com/Kitware/CMake/releases/download/v3.17.1/cmake-3.17.1-Linux-x86_64.tar.gz | tar xzf -
+            sudo cp -R cmake-3.17.1-Linux-x86_64/* /usr
+      - run:
+          command: |
+            source $BASH_ENV
             cd c_api
             make
 
