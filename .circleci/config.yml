@@ -63,7 +63,7 @@ jobs:
           environment:
             OMP_NUM_THREADS: 10
       - run:
-        name: Build C api
+          name: Build C api
           command: |
             cd c_api
             make
