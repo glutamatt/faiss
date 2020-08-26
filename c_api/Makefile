@@ -7,7 +7,7 @@
 
 # C API
 
-include ../makefile.inc
+# include ../makefile.inc
 DEBUGFLAG=-DNDEBUG # no debugging
 
 LIBNAME=libfaiss

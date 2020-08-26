@@ -7,7 +7,7 @@
 
 # C API with GPU support
 
-include ../../makefile.inc
+# include ../../makefile.inc
 DEBUGFLAG=-DNDEBUG # no debugging
 
 LIBNAME=libfaiss
