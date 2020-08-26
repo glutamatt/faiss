@@ -62,6 +62,19 @@ jobs:
             python -m unittest discover ./tests
           environment:
             OMP_NUM_THREADS: 10
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - *
+
+  build_c_api:
+    docker:
+      - image: circleci/python:3.7
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          command: ls -alh
 
   build_osx:
     macos:
@@ -124,5 +137,8 @@ workflows:
   build:
     jobs:
       - build_linux
+      - build_c_api:
+          requires:
+            - build_linux
       - build_osx
       - build_windows
